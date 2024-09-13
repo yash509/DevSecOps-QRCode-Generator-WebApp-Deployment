@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pe-wa-deployment
+  name: qr-generator-deployment
 spec:
   replicas: 6  # Number of desired replicas
   selector:
     matchLabels:
-      app: pe-wa
+      app: qr-generator
   template:
     metadata:
       labels:
-        app: pe-wa
+        app: qr-generator
     spec:
       containers:
-      - name: pe-wa
-        image: yash5090/pe-wa:latest
+      - name: qr-generator
+        image: yash5090/qr-generator:latest
         ports:
         - containerPort: 5000
